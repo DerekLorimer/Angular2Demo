@@ -1,4 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Vehicle } from './vehicle';
 
 const vehicles = [
@@ -27,12 +28,21 @@ export class VehicleService {
 
     private vehicles :Vehicle[];
 
-    constructor() {
+    constructor(private httpClient: HttpClient) {
         this.vehicles = vehicles;
     }
 
     getVehicles() {
         console.log("VehicleService.getVehicles");
+
+        console.log("Call REST api");
+
+        console.log("added HttpClient to constructor");
+
+        console.log("do call");
+        this.httpClient.get("http://localhost:8080/RestService/api/vehicle");
+        console.log("GET done");
+
         return this.vehicles;
     }
 

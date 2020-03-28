@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/common/http");
 var vehicles = [
     {
         id: 1,
@@ -31,16 +32,22 @@ var vehicles = [
     },
 ];
 var VehicleService = /** @class */ (function () {
-    function VehicleService() {
+    function VehicleService(httpClient) {
+        this.httpClient = httpClient;
         this.vehicles = vehicles;
     }
     VehicleService.prototype.getVehicles = function () {
         console.log("VehicleService.getVehicles");
+        console.log("Call REST api");
+        console.log("added HttpClient to constructor");
+        console.log("do call");
+        this.httpClient.get("http://localhost:8080/RestService/api/vehicle");
+        console.log("GET done");
         return this.vehicles;
     };
     VehicleService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], VehicleService);
     return VehicleService;
 }());
