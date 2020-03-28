@@ -10,23 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var derek_1 = require("./derek");
-// Component Decorator
-// Provides Metadata about component and is used by Angular to create View
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.name = derek_1.firstName;
-        console.log("constructor-AppComponent");
-        console.log("Version 2");
+// Component decorator
+var PersonListComponent = /** @class */ (function () {
+    function PersonListComponent() {
+        this.person = "Derek Lorimer";
     }
-    AppComponent = __decorate([
+    PersonListComponent.prototype.ngOnInit = function () {
+    };
+    PersonListComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: './app.component.html',
+            selector: 'person-list',
+            template: '<p>Person List {{person}}</p>'
         }),
         __metadata("design:paramtypes", [])
-    ], AppComponent);
-    return AppComponent;
+    ], PersonListComponent);
+    return PersonListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PersonListComponent = PersonListComponent;
+//# sourceMappingURL=person-list.js.map

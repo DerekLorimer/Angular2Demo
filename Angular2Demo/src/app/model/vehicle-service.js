@@ -10,23 +10,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var derek_1 = require("./derek");
-// Component Decorator
-// Provides Metadata about component and is used by Angular to create View
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.name = derek_1.firstName;
-        console.log("constructor-AppComponent");
-        console.log("Version 2");
+var vehicles = [
+    {
+        id: 1,
+        name: 'Trailer - 1',
+        type: 'Truck',
+        mass: 40
+    },
+    {
+        id: 2,
+        name: 'An-2',
+        type: 'Plane',
+        mass: 5
+    },
+    {
+        id: 3,
+        name: 'LandCruiser 80',
+        type: 'Jeep',
+        mass: 2
+    },
+];
+var VehicleService = /** @class */ (function () {
+    function VehicleService() {
+        this.vehicles = vehicles;
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: './app.component.html',
-        }),
+    VehicleService.prototype.getVehicles = function () {
+        return this.vehicles;
+    };
+    VehicleService = __decorate([
+        core_1.Injectable(),
         __metadata("design:paramtypes", [])
-    ], AppComponent);
-    return AppComponent;
+    ], VehicleService);
+    return VehicleService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.VehicleService = VehicleService;
+//# sourceMappingURL=vehicle-service.js.map

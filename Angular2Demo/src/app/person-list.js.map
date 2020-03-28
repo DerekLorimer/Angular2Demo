@@ -1,0 +1,1 @@
+{"version":3,"file":"person-list.js","sourceRoot":"","sources":["person-list.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,sCAAkD;AAElD,sBAAsB;AAQtB;IAII;QAFA,WAAM,GAAY,eAAe,CAAC;IAIlC,CAAC;IAED,sCAAQ,GAAR;IACA,CAAC;IATQ,mBAAmB;QAN/B,gBAAS,CAAC;YACP,QAAQ,EAAE,aAAa;YACvB,QAAQ,EAAE,+BAA+B;SAC5C,CAAC;;OAGW,mBAAmB,CAW/B;IAAD,0BAAC;CAAA,AAXD,IAWC;AAXY,kDAAmB"}
