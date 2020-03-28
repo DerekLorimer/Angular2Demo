@@ -10,17 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var vehicle_service_1 = require("./vehicle-service");
 var VehicleListComponent = /** @class */ (function () {
-    function VehicleListComponent() {
+    function VehicleListComponent(vehicleService) {
+        this.vehicleService = vehicleService;
+        this.vehicles = this.vehicleService.getVehicles();
     }
     VehicleListComponent.prototype.ngOnInit = function () {
     };
     VehicleListComponent = __decorate([
         core_1.Component({
             selector: 'vehicle-list',
-            template: '<h1>Vehicle List</h1>'
+            templateUrl: './vehicle-list.html',
+            providers: [vehicle_service_1.VehicleService]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [vehicle_service_1.VehicleService])
     ], VehicleListComponent);
     return VehicleListComponent;
 }());

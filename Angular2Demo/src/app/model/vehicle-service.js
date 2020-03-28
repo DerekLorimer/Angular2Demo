@@ -35,6 +35,7 @@ var VehicleService = /** @class */ (function () {
         this.vehicles = vehicles;
     }
     VehicleService.prototype.getVehicles = function () {
+        console.log("VehicleService.getVehicles");
         return this.vehicles;
     };
     VehicleService = __decorate([

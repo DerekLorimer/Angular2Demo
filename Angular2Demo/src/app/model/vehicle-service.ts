@@ -32,6 +32,7 @@ export class VehicleService {
     }
 
     getVehicles() {
+        console.log("VehicleService.getVehicles");
         return this.vehicles;
     }
 
