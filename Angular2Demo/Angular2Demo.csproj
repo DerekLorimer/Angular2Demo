@@ -100,6 +100,7 @@
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\derek.ts" />
+    <TypeScriptCompile Include="src\app\model\rest.ts" />
     <TypeScriptCompile Include="src\app\model\vehicle-list.ts" />
     <TypeScriptCompile Include="src\app\model\vehicle-service.ts" />
     <TypeScriptCompile Include="src\app\model\vehicle.ts" />
