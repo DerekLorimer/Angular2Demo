@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Vehicle } from './vehicle';
+import { Observable } from 'rxjs/Observable';
 
 const vehicles = [
     {
@@ -26,24 +27,63 @@ const vehicles = [
 @Injectable()
 export class VehicleService {
 
-    private vehicles :Vehicle[];
+    private vehicles: Vehicle[] = [];
+    // var arr: Criminal[] = [];
 
+  
     constructor(private httpClient: HttpClient) {
-        this.vehicles = vehicles;
     }
 
+    vehicleURL = "http://localhost:8080/RestService/api/vehicle";
+    getVehicleJson(): Observable<any> {
+        return this.httpClient.get(this.vehicleURL, { responseType: 'json' });
+    } 
+
     getVehicles() {
+
+        var vehicleList: Vehicle[] = [];
         console.log("VehicleService.getVehicles");
+
+        
+
 
         console.log("Call REST api");
 
+        console.log(this.vehicles.length);
+
         console.log("added HttpClient to constructor");
 
-        console.log("do call");
-        this.httpClient.get("http://localhost:8080/RestService/api/vehicle");
-        console.log("GET done");
+        this.getVehicleJson().subscribe(data => {
+            console.log("Parse Json Array" + data);
+            this.vehicles = data;
+            console.log(data[0].name);
+            console.log("push data item");
+            for (var item in data) {
+                console.log("item" );
+            }
 
-        return this.vehicles;
+            data.forEach((element : Vehicle) => {
+                console.log("element test" + element.name);
+                console.log(this.vehicles.length);
+                this.vehicles.push(new Vehicle(element.name));
+                vehicleList.push(new Vehicle(element.name));
+                 console.log("after push" + vehicleList.length);
+            });
+
+            console.log(this.vehicles.length);
+
+            //vehicles.push(data[0]);
+         
+            }
+        );
+
+        console.log("GET done - 2 return vehicles");
+      //  console.log(this.vehicles[0].name);
+        console.log(this.vehicles.length);
+
+        console.log("VehicleList " + vehicleList.length);
+
+        return vehicleList;
     }
 
 }

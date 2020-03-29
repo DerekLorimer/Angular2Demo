@@ -1,1 +1,1 @@
-{"version":3,"file":"Vehicle.js","sourceRoot":"","sources":["Vehicle.ts"],"names":[],"mappings":";;AAAA;IAAA;IAKA,CAAC;IAAD,cAAC;AAAD,CAAC,AALD,IAKC;AALY,0BAAO"}
+{"version":3,"file":"Vehicle.js","sourceRoot":"","sources":["Vehicle.ts"],"names":[],"mappings":";;AAAA;IAMI,cAAc;IACd,iBAAoB,WAAmB;QAAnB,gBAAW,GAAX,WAAW,CAAQ;QACnC,IAAI,CAAC,IAAI,GAAG,WAAW,CAAC;IAC5B,CAAC;IACL,cAAC;AAAD,CAAC,AAVD,IAUC;AAVY,0BAAO"}

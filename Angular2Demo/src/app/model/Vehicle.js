@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Vehicle = /** @class */ (function () {
-    function Vehicle() {
+    //constructor 
+    function Vehicle(vehicleName) {
+        this.vehicleName = vehicleName;
+        this.name = vehicleName;
     }
     return Vehicle;
 }());
